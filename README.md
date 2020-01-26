@@ -1,7 +1,7 @@
 # 概要
 p5.jsを使った色々な実験です。
 
-# URL
+# 作品
 - ## [溢れ出るボール](https://megafriday.github.io/creative-coding/)
 [![溢れ出るボール](https://megafriday.github.io/creative-coding/gallery/WS000001.bmp)](https://megafriday.github.io/creative-coding/)
 - - -
