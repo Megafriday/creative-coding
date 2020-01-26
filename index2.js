@@ -1,9 +1,5 @@
 const bullets = [];
-const bSpeed = 10;
-const bWidth = 6, bHeight = 8;
 const enemies = [];
-const eWidth = 50; eHeight = 50;
-let score = 0;
 let tickCounter = 0;
 
 function setup() {
@@ -11,72 +7,48 @@ function setup() {
 }
 
 function draw() {
-	background(0, 10, 60);
-
-	if (tickCounter % 5 === 0) createBullet(mouseX, mouseY);
-	if (tickCounter % 10 === 0) createEnemy();
-
-	for (let index = 0; index < bullets.length; index++) {
-		const bullet = bullets[index];
-		bullet.y -= bSpeed;
-		if (bullet.y < 0) {
-			bullets.splice(index, 1);
-			index -= 1;
-			continue;
-		}
-
-		// hit
-		let hitFlag = false;
-		for (let eIndex = 0; eIndex < enemies.length; eIndex++) {
-			const enemy = enemies[eIndex];
-			if (
-				Math.abs(bullet.x - enemy.x) < (eWidth) &&
-				Math.abs(bullet.y - enemy.y) < (eHeight)
-			) {
-				hitFlag = true;
-				enemies.splice(eIndex, 1);
-				eIndex -= 1;
-				createEnemy();
-				fill(255, 0, 0);
-				ellipse(bullet.x, bullet.y, 40, 40);
-				score += 100;
-				break;
-			}
-		}
-
-		if (hitFlag === true) {
-			bullets.splice(index, 1);
-			index -= 1;
-			continue;
-		}
-
-		fill(255);
-		ellipse(bullet.x, bullet.y, bWidth, bHeight);
-	}
-
-	for (let eIndex = 0; eIndex < enemies.length; eIndex++) {
-		const enemy = enemies[eIndex];
-		enemy.x += enemy.moveX;
-		enemy.y += enemy.moveY;
-		if (enemy.x < 0 || enemy.x > windowWidth || enemy.y > windowHeight) {
-			enemies.splice(eIndex, 1);
-			eIndex -= 1;
-			continue;
-		}
-		fill(enemy.colorR, enemy.colorG, enemy.colorB);
-		ellipse(enemy.x, enemy.y, eWidth, eHeight);
-	}
-
-	fill(255);
-	ellipse(mouseX, mouseY, 20, 20);
-	fill(255, 0, 0);
+	background(100);
+	fill("white");
+	ellipse(mouseX, mouseY, 20);
 	textSize(30);
-	text(`score: ${score}`, 0, 50);
+	text(`enemies: ${enemies.length}`, 0, 30);
+	text(`bullets: ${bullets.length}`, 0, 70);
+
+
+	for (let i = 1; i < bullets.length; i++) {
+		const bullet = bullets[i];
+		bullet.y -= 5;
+		if (bullet.y < 0) {
+			bullets.splice(i, 1);
+			i -= 1;
+			continue;
+		}
+		
+		fill("white");
+		ellipse(bullet.x, bullet.y, 8);
+	}
+	
+	for (let k = 0; k < enemies.length; k++) {
+		const enemy = enemies[k];
+		enemy.x += enemy.speedX;
+		enemy.y += enemy.speedY;
+
+		if(enemy.x < 0 || windowWidth < enemy.x || enemy.y < 0 || windowHeight < enemy.y){
+			enemies.splice(k, 1);
+			k -= 1;
+			continue;
+		}
+
+		fill(enemy.colorR, enemy.colorG, enemy.colorB);
+		ellipse(enemy.x, enemy.y, 50);
+	}
 
 	tickCounter = (tickCounter + 1) % 10000;
+	if (tickCounter % 5 === 0) createBullet();
+	if (tickCounter % 5 === 0) createEnemy();
 }
 
-function createBullet(mouseX, mouseY) {
+function createBullet() {
 	bullets.push({
 		x: mouseX,
 		y: mouseY
@@ -84,10 +56,19 @@ function createBullet(mouseX, mouseY) {
 }
 
 function createEnemy() {
-	const x = random(windowWidth);
-	const moveX = random(-6, 6), moveY = random(1, 5);
-	const colorR = random(255), colorG = random(255), colorB = random(255);
+	const speedX = random(-6, 6);
+	const speedY = random(-6, 6);
+	const colorR = random(155, 255);
+	const colorG = random(155, 255);
+	const colorB = random(155, 255);
+
 	enemies.push({
-		x, y: 0, moveX, moveY, colorR, colorG, colorB
+		x: windowWidth / 2,
+		y: windowHeight / 2,
+		speedX,
+		speedY,
+		colorR,
+		colorG,
+		colorB
 	});
 }

@@ -1,6 +1,8 @@
-const bullets = [];
-const enemies = [];
 let tickCounter = 0;
+let balls = [];
+let txtColorR = 0;
+let txtColorG = 0;
+let txtColorB = 0;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
@@ -8,67 +10,48 @@ function setup() {
 
 function draw() {
 	background(100);
-	fill("white");
-	ellipse(mouseX, mouseY, 20);
-	textSize(30);
-	text(`enemies: ${enemies.length}`, 0, 30);
-	text(`bullets: ${bullets.length}`, 0, 70);
 
+	if (tickCounter % 5 === 0) createBall();
 
-	for (let i = 1; i < bullets.length; i++) {
-		const bullet = bullets[i];
-		bullet.y -= 5;
-		if (bullet.y < 0) {
-			bullets.splice(i, 1);
-			i -= 1;
-			continue;
-		}
-		
-		fill("white");
-		ellipse(bullet.x, bullet.y, 8);
-	}
-	
-	for (let k = 0; k < enemies.length; k++) {
-		const enemy = enemies[k];
-		enemy.x += enemy.speedX;
-		enemy.y += enemy.speedY;
+	// ボール
+	for (let i = 0; i < balls.length; i++) {
+		const ball = balls[i];
+		ball.x += ball.speedX;
+		ball.y += ball.speedY;
 
-		if(enemy.x < 0 || windowWidth < enemy.x || enemy.y < 0 || windowHeight < enemy.y){
-			enemies.splice(k, 1);
-			k -= 1;
-			continue;
+		if( ball.x < 0 || windowWidth < ball.x || 
+			ball.y < 0 || windowHeight < ball.y ) {
+
+				balls.splice(i, 1);
+				i -= 1;
+				continue;
 		}
 
-		fill(enemy.colorR, enemy.colorG, enemy.colorB);
-		ellipse(enemy.x, enemy.y, 50);
+		fill(ball.colorR, ball.colorG, ball.colorB);
+		ellipse(ball.x, ball.y, 150);
 	}
+
+	// 文字列
+	if (tickCounter % 15 === 0) {
+		txtColorR = random(150, 255);
+		txtColorG = random(150, 255);
+		txtColorB = random(150, 255);
+	}
+	textSize(150);
+	fill(txtColorR, txtColorG, txtColorB);
+	text(`N予備校最高だ！`, 110, windowHeight / 2);
 
 	tickCounter = (tickCounter + 1) % 10000;
-	if (tickCounter % 5 === 0) createBullet();
-	if (tickCounter % 5 === 0) createEnemy();
 }
 
-function createBullet() {
-	bullets.push({
-		x: mouseX,
-		y: mouseY
-	});
-}
-
-function createEnemy() {
-	const speedX = random(-6, 6);
-	const speedY = random(-6, 6);
-	const colorR = random(155, 255);
-	const colorG = random(155, 255);
-	const colorB = random(155, 255);
-
-	enemies.push({
+function createBall() {
+	balls.push({
 		x: windowWidth / 2,
 		y: windowHeight / 2,
-		speedX,
-		speedY,
-		colorR,
-		colorG,
-		colorB
+		speedX: random(-6, 6),
+		speedY: random(-6, 6),
+		colorR: random(150, 255),
+		colorG: random(150, 255),
+		colorB: random(150, 255)
 	});
 }
