@@ -13,3 +13,7 @@ p5.jsを使った色々な実験です。
 - ## [タイムマシン](https://megafriday.github.io/creative-coding/index7.html)
 [![タイムマシン](https://megafriday.github.io/creative-coding/gallery/WS000002.bmp)](https://megafriday.github.io/creative-coding/index7.html)
 - - -
+
+- ## [１分タイマー](https://megafriday.github.io/creative-coding/index8.html)
+[![タイムマシン](https://megafriday.github.io/creative-coding/gallery/WS000000.jpg)](https://megafriday.github.io/creative-coding/index8.html)
+- - -
