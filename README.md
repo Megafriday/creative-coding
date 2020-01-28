@@ -4,25 +4,25 @@ p5.jsを使った色々な実験です。
 # 作品
 - ## [溢れ出るボール](https://megafriday.github.io/creative-coding/)
 <a href="https://megafriday.github.io/creative-coding/">
-<img src="https://megafriday.github.io/creative-coding/gallery/WS000001.bmp" width="400px">
+<img src="https://megafriday.github.io/creative-coding/gallery/WS000002.jpg" width="400px">
 </a>
 <hr>
 
 - ## [疾風](https://megafriday.github.io/creative-coding/index6.html)
 <a href="https://megafriday.github.io/creative-coding/index6.html">
-<img src="https://megafriday.github.io/creative-coding/gallery/WS000000.bmp" width="400px">
-</a>
-<hr>
-
-- ## [タイムマシン](https://megafriday.github.io/creative-coding/index7.html)
-<a href="https://megafriday.github.io/creative-coding/index7.html">
-<img src="https://megafriday.github.io/creative-coding/gallery/WS000002.bmp" width="400px">
+<img src="https://megafriday.github.io/creative-coding/gallery/WS000003.jpg" width="400px">
 </a>
 <hr>
 
 - ## [おもしろペン](https://megafriday.github.io/creative-coding/index9.html)
 <a href="https://megafriday.github.io/creative-coding/index9.html">
 <img src="https://megafriday.github.io/creative-coding/gallery/WS000001.jpg" width="400px">
+</a>
+<hr>
+
+- ## [タイムマシン](https://megafriday.github.io/creative-coding/index7.html)
+<a href="https://megafriday.github.io/creative-coding/index7.html">
+<img src="https://megafriday.github.io/creative-coding/gallery/WS000004.jpg" width="400px">
 </a>
 <hr>
 
