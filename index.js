@@ -28,7 +28,7 @@ function draw() {
 		}
 
 		fill(ball.colorR, ball.colorG, ball.colorB);
-		ellipse(ball.x, ball.y, 150);
+		ellipse(ball.x, ball.y, ball.size);
 	}
 
 	// 文字列
@@ -52,6 +52,7 @@ function createBall() {
 		speedY: random(-6, 6),
 		colorR: random(150, 255),
 		colorG: random(150, 255),
-		colorB: random(150, 255)
+		colorB: random(150, 255),
+		size: 150
 	});
 }
