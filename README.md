@@ -37,3 +37,9 @@ p5.jsを使った色々な実験です。
 <img src="https://megafriday.github.io/creative-coding/gallery/WS000002.jpg" width="400px">
 </a>
 <hr>
+
+- ## [ランダムウォーク](https://megafriday.github.io/creative-coding/index11.html)
+<a href="https://megafriday.github.io/creative-coding/index11.html">
+<img src="https://megafriday.github.io/creative-coding/gallery/WS000006.jpg" width="400px">
+</a>
+<hr>

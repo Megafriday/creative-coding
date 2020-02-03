@@ -3,6 +3,8 @@ let y = 0;
 
 function setup() {
 	createCanvas(windowWidth, windowHeight);
+	x = windowWidth / 2;
+	y = windowHeight / 2;
 }
 
 function draw() {
