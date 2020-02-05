@@ -43,3 +43,9 @@ p5.jsを使った色々な実験です。
 <img src="https://megafriday.github.io/creative-coding/gallery/WS000007.jpg" width="400px">
 </a>
 <hr>
+
+- ## [カラフルな波紋](https://megafriday.github.io/creative-coding/index12.html)
+<a href="https://megafriday.github.io/creative-coding/index12.html">
+<img src="https://megafriday.github.io/creative-coding/gallery/WS000006.jpg" width="400px">
+</a>
+<hr>
